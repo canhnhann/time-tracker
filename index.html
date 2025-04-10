@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Time Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Time Tracker</h1>
+    <form id="activity-form">
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="type">Activity:</label>
+      <select id="type" required>
+        <option value="">--Select--</option>
+        <option value="working">Working</option>
+        <option value="study">Study</option>
+        <option value="houseworking">Houseworking</option>
+        <option value="chilling">Chilling</option>
+        <option value="harding">Harding</option>
+      </select>
+
+      <label for="start">Start Time:</label>
+      <input type="time" id="start" required />
+      <label for="end">End Time:</label>
+      <input type="time" id="end" required />
+
+      <button type="submit">Add Activity</button>
+    </form>
+
+    <label for="filter-date">View by Date:</label>
+    <input type="date" id="filter-date" />
+    <button onclick="downloadCSV()">Export CSV</button>
+
+    <canvas id="summaryChart" style="margin-top: 30px;"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
